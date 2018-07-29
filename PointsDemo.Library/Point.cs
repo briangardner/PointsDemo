@@ -8,7 +8,7 @@ namespace PointsDemo.Library
 {
     public class Point
     {
-        public Point(int x, int y)
+        public Point(int x=0, int y=0)
         {
             X = x;
             Y = y;
@@ -19,7 +19,7 @@ namespace PointsDemo.Library
 
         public void OutputCoordinate()
         {
-            Console.WriteLine($"({X},{Y})");
+            Console.WriteLine(GetCoordinate());
         }
 
         public virtual string GetCoordinate()

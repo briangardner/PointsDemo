@@ -9,7 +9,7 @@ namespace PointsDemo.Library
     class Point3D : Point
     {
         public int Z { get; set; }
-        public Point3D(int x, int y, int z) : base(x, y)
+        public Point3D(int x=0, int y=0, int z=0) : base(x, y)
         {
             Z = z;
         }
@@ -20,6 +20,7 @@ namespace PointsDemo.Library
             return Math.Sqrt(Math.Pow(base.CalculateDistance(), 2) + Math.Pow(Z, 2));
         }
 
+        /// <inheritdoc/>
         public override string GetCoordinate()
         {
             return $"({X}, {Y}, {Z})";

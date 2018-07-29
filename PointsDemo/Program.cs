@@ -15,7 +15,7 @@ namespace PointsDemo
             var endPoint = new Point(5, 8);
             var line = new Line(startPoint, endPoint);
 
-            startPoint.OutputCoordinate();
+            Console.WriteLine(startPoint.GetCoordinate());
             var distance = startPoint.CalculateDistance();
             Console.WriteLine($"{distance:N}");
 
