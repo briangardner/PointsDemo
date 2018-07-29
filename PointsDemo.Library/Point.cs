@@ -22,11 +22,15 @@ namespace PointsDemo.Library
             Console.WriteLine($"({X},{Y})");
         }
 
-        public string GetCoordinate()
+        public virtual string GetCoordinate()
         {
-            return $"({X},{Y})";
+            return $"({X}, {Y})";
         }
-        public double CalculateDistance()
+        /// <summary>
+        /// Calculates distance from Origin
+        /// </summary>
+        /// <returns></returns>
+        public virtual double CalculateDistance()
         {
             var distance = Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2));
             return distance;
