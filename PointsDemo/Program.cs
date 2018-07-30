@@ -19,13 +19,6 @@ namespace PointsDemo
             var distance = startPoint.CalculateDistanceFromPoint(new Point(0,0));
             Console.WriteLine($"{distance:N}");
 
-            //moving the point
-            /*point.X = 5;
-            point.OutputCoordinate();
-            distance = point.CalculateDistance();
-            Console.WriteLine($"{distance:N}");
-            Console.ReadKey();*/
-
             Console.WriteLine("Line Details:");
             Console.WriteLine(line.GetLineCoordinates());
             Console.WriteLine("Length:" + line.CalculateLength());
@@ -49,7 +42,7 @@ namespace PointsDemo
                 new Point3D(9, 9, 9)
             };
             foreach (Point point in listOfPoints)
-            {
+            {                
                 Console.WriteLine(point.GetCoordinate());
             }
 

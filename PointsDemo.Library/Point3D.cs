@@ -9,6 +9,8 @@ namespace PointsDemo.Library
     public sealed class Point3D : Point
     {
         public int Z { get; set; }
+
+        public bool Is3D => true;
         public Point3D(int x=0, int y=0, int z=0) : base(x, y)
         {
             Z = z;
@@ -31,5 +33,6 @@ namespace PointsDemo.Library
         {
             return $"({X}, {Y}, {Z})";
         }
+
     }
 }
