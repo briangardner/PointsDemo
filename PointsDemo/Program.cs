@@ -16,7 +16,7 @@ namespace PointsDemo
             var line = new Line(startPoint, endPoint);
 
             Console.WriteLine(startPoint.GetCoordinate());
-            var distance = startPoint.CalculateDistance();
+            var distance = startPoint.CalculateDistanceFromPoint(new Point(0,0));
             Console.WriteLine($"{distance:N}");
 
             //moving the point
@@ -27,8 +27,32 @@ namespace PointsDemo
             Console.ReadKey();*/
 
             Console.WriteLine("Line Details:");
-            line.OutputLineCoordinates();
+            Console.WriteLine(line.GetLineCoordinates());
             Console.WriteLine("Length:" + line.CalculateLength());
+            Console.ReadKey();
+            Console.WriteLine();
+
+            var line3D = new Line(new Point3D(3,4,5), new Point3D(1,2,3));
+            Console.WriteLine($"Distance: {line3D.CalculateLength():N}");
+            Console.WriteLine($"Coordinates: {line3D.GetLineCoordinates()}");
+            Console.ReadKey();
+
+
+            Console.WriteLine();
+            Console.WriteLine("Polymorphism in action!!!");
+            var listOfPoints = new List<Point>()
+            {
+                new Point(),
+                new Point(1, 4),
+                new Point3D(4, 3, 2),
+                new Point(9, 9),
+                new Point3D(9, 9, 9)
+            };
+            foreach (Point point in listOfPoints)
+            {
+                Console.WriteLine(point.GetCoordinate());
+            }
+
             Console.ReadKey();
         }
     }

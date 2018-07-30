@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PointsDemo.Library
 {
-    class Point3D : Point
+    public sealed class Point3D : Point
     {
         public int Z { get; set; }
         public Point3D(int x=0, int y=0, int z=0) : base(x, y)
@@ -15,9 +15,15 @@ namespace PointsDemo.Library
         }
 
         /// <inheritdoc />
-        public override double CalculateDistance()
+        public override double CalculateDistanceFromPoint(Point point)
         {
-            return Math.Sqrt(Math.Pow(base.CalculateDistance(), 2) + Math.Pow(Z, 2));
+            if (!(point is Point3D otherPoint))
+            {
+                throw new Exception("point must be of type Point3d.");
+            }
+
+            var zDiff = Math.Abs(Z - otherPoint.Z);
+            return Math.Sqrt(Math.Pow(base.CalculateDistanceFromPoint(point), 2) + Math.Pow(zDiff, 2));
         }
 
         /// <inheritdoc/>

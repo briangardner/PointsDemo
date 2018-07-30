@@ -18,14 +18,12 @@ namespace PointsDemo.Library
 
         public double CalculateLength()
         {
-            var xDiff = End.X - Start.X;
-            var yDiff = End.Y - Start.Y;
-            return Math.Sqrt(Math.Pow(xDiff, 2) + Math.Pow(yDiff, 2));
+            return End.CalculateDistanceFromPoint(Start);
         }
 
-        public void OutputLineCoordinates()
+        public string GetLineCoordinates()
         {
-            Console.WriteLine(Start.GetCoordinate() + " - " + End.GetCoordinate());
+            return $"{Start.GetCoordinate()} - {End.GetCoordinate()}";
         }
     }
 }

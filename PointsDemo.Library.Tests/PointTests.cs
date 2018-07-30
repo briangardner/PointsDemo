@@ -36,7 +36,7 @@ namespace PointsDemo.Library.Tests
         public void CalculateDistance_Should_Return_Correct_Distance_From_Origin()
         {
             var point = new Point(3, 4);
-            var result = point.CalculateDistance();
+            var result = point.CalculateDistanceFromPoint(new Point(0,0));
             Assert.AreEqual(5, result);
         }
     }
